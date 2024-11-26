@@ -29,6 +29,9 @@ class App extends cutil.mixin(Obj, pubsub, host) {
     this._prefs = prefs;
     this.storePrefs(this._prefs);
   }
+  resetPrefs() {
+    this._prefs = null;
+  }
   loadPrefs() {
     return JSON.parse(
       this.window.localStorage.prefs || JSON.stringify(this.defaultPrefs),
