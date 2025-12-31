@@ -142,11 +142,10 @@ class App extends cutil.mixin(Obj, pubsub, host) {
   }
   async toLocation() {
     let app = this;
-    await app.toGo(
-      window.location.pathname +
-        window.location.search +
-        window.location.hash,
-    );
+    let { window } = app;
+    let { location } = window;
+    let { pathname, search, hash } = location;
+    await app.toGo(pathname + search + hash);
   }
   async toRun() {
     let app = this;
