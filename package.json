@@ -1,19 +1,19 @@
 {
-	"name": "@ghasemkiani/client-app",
-	"version": "1.0.1",
-	"type": "module",
-	"main": "index.js",
-	"scripts": {
-		"test": "node --test"
-	},
-	"keywords": [],
-	"author": "Ghasem Kiani",
-	"license": "MIT",
-	"description": "",
-	"dependencies": {
-		"@ghasemkiani/base": "github:ghasemkiani/base",
-		"@ghasemkiani/base-utils": "github:ghasemkiani/base-utils",
-		"@ghasemkiani/html-maker": "github:ghasemkiani/html-maker",
-		"@ghasemkiani/xdom": "github:ghasemkiani/xdom"
-	}
+  "name": "@ghasemkiani/client-app",
+  "version": "1.0.2",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "Ghasem Kiani",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@ghasemkiani/base": "github:ghasemkiani/base",
+    "@ghasemkiani/base-utils": "github:ghasemkiani/base-utils",
+    "@ghasemkiani/html-maker": "github:ghasemkiani/html-maker",
+    "@ghasemkiani/xdom": "github:ghasemkiani/xdom"
+  }
 }

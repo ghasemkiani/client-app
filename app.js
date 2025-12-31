@@ -140,23 +140,23 @@ class App extends cutil.mixin(Obj, pubsub, host) {
   async toGoHome() {
     let app = this;
   }
+  async toLocation() {
+    let app = this;
+    await app.toGo(
+      window.location.pathname +
+        window.location.search +
+        window.location.hash,
+    );
+  }
   async toRun() {
     let app = this;
     let { window } = app;
     window.addEventListener("load", async (event) => {
       await app.toCreate();
-      await app.toGo(
-        window.location.pathname +
-          window.location.search +
-          window.location.hash,
-      );
+      await app.toLocation();
     });
     window.addEventListener("popstate", async (event) => {
-      await app.toGo(
-        window.location.pathname +
-          window.location.search +
-          window.location.hash,
-      );
+      await app.toLocation();
     });
   }
   async toStart() {
