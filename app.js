@@ -21,24 +21,22 @@ class App extends cutil.mixin(Obj, pubsub, host) {
 	}
 	get prefs() {
 		if (cutil.na(this._prefs)) {
-			this._prefs = this.loadPrefs();
+			this.loadPrefs();
 		}
 		return this._prefs;
 	}
 	set prefs(prefs) {
 		this._prefs = prefs;
-		this.storePrefs(this._prefs);
+		this.storePrefs();
 	}
 	resetPrefs() {
 		this._prefs = null;
 	}
 	loadPrefs() {
-		return JSON.parse(
-			this.window.localStorage.prefs || JSON.stringify(this.defaultPrefs),
-		);
+    this._prefs = JSON.parse(this.window.localStorage.prefs || JSON.stringify(this.defaultPrefs) || "{}");
 	}
-	storePrefs(prefs) {
-		this.window.localStorage.prefs = JSON.stringify(prefs);
+	storePrefs() {
+		this.window.localStorage.prefs = JSON.stringify(this._prefs);
 	}
 	async toCallApi(method, arg) {
 		let app = this;
