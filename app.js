@@ -3,7 +3,6 @@ import { Obj } from "@ghasemkiani/base";
 import { pubsub } from "@ghasemkiani/base-utils";
 import { X } from "@ghasemkiani/xdom";
 import { host } from "@ghasemkiani/html-maker";
-import { XHtml } from "@ghasemkiani/html-maker";
 
 class App extends cutil.mixin(Obj, pubsub, host) {
 	static {

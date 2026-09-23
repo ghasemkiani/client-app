@@ -1,6 +1,6 @@
 {
   "name": "@ghasemkiani/client-app",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "dependencies": {
     "@ghasemkiani/base": "github:ghasemkiani/base",
     "@ghasemkiani/base-utils": "github:ghasemkiani/base-utils",
+    "@ghasemkiani/dom": "github:ghasemkiani/dom",
     "@ghasemkiani/html-maker": "github:ghasemkiani/html-maker",
     "@ghasemkiani/xdom": "github:ghasemkiani/xdom"
   }
