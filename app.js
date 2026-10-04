@@ -2,9 +2,10 @@ import { cutil } from "@ghasemkiani/base";
 import { Obj } from "@ghasemkiani/base";
 import { pubsub } from "@ghasemkiani/base-utils";
 import { X } from "@ghasemkiani/xdom";
-import { host } from "@ghasemkiani/html-maker";
+import { iwx } from "@ghasemkiani/xdom";
+import { iwdom } from "@ghasemkiani/dom";
 
-class App extends cutil.mixin(Obj, pubsub, host) {
+class App extends cutil.mixin(Obj, pubsub, iwdom, iwx) {
 	static {
 		cutil.extend(this.prototype, {
 			name: "Untitled",
