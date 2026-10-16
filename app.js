@@ -41,7 +41,7 @@ class App extends cutil.mixin(Obj, pubsub, iwdom, iwx) {
 	async toCallApi(method, arg) {
 		let app = this;
 		let url = new URL(`/api/${method}`, app.url);
-		url.search = new URLSearchParams(cutil.asObject(arg)).toString();
+		url.search = new URLSearchParams(Object.entries(cutil.asObject(arg)).map(([k, v]) => [k, cutil.isNil(v) ? "" : v])).toString();
 		let rsp = await fetch(url);
 		let { success, result, error: message } = await rsp.json();
 		if (!success) {
@@ -76,7 +76,7 @@ class App extends cutil.mixin(Obj, pubsub, iwdom, iwx) {
 				.replace(/^home$/, "");
 		if (cutil.a(params)) {
 			uri += `?`;
-			let usp = new URLSearchParams(cutil.asObject(params));
+			let usp = new URLSearchParams(Object.entries(cutil.asObject(params)).map(([k, v]) => [k, cutil.isNil(v) ? "" : v]));
 			if (usp.size > 0) {
 				uri += `${usp.toString()}`;
 			}
